@@ -3,13 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git url: 'https://github.com/<your-username>/nginx-app.git',
-                    credentialsId: 'github-creds'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t nginx-jenkins .'
